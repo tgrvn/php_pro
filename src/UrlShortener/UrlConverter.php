@@ -21,11 +21,12 @@ class UrlConverter implements IUrlEncoder, IUrlDecoder
     function decode(string $code): string
     {
         try {
-            $url = $this->urlRepository->find($code)['url'];
+            $data = $this->urlRepository->find($code);
         } catch (\InvalidArgumentException $e) {
             throw new \InvalidArgumentException($e->getMessage());
         }
-        return $url;
+
+        return $data['url'];
     }
 
     /**
