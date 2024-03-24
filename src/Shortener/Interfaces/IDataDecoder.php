@@ -1,8 +1,8 @@
 <?php
 
-namespace App\UrlShortener\Interfaces;
+namespace App\Shortener\Interfaces;
 
-interface IUrlDecoder
+interface IDataDecoder
 {
     /**
      * @param string $code
