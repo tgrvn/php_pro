@@ -27,8 +27,8 @@ class DataConverter implements IDataEncoder, IDataDecoder
     {
         try {
             $data = $this->repository->get($code)['data'];
-        } catch (DataNotFoundException) {
-            throw new \InvalidArgumentException('data not found');
+        } catch (DataNotFoundException $e) {
+            throw new \InvalidArgumentException($e->getMessage());
         }
 
         return $data;
